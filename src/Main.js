@@ -10,11 +10,15 @@ import { Actions } from 'react-native-router-flux';
 
 
 export default class Main extends Component {
+  onPressButton() {
+    Actions.login();  // 현재 페이지가 스택에 남으면서 다음 페이지는 스택에 쌓인다.
+  }
+
   render() {
     return (
       <View style={styles.wrapper}>
         <View style={styles.frame}>
-          <TouchableOpacity style={styles.view_button}>
+          <TouchableOpacity style={styles.view_button} onPress={this.onPressButton}>
             <View style={styles.view} />
             <View style={styles.view} />
             <View style={styles.view} />

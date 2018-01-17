@@ -12,6 +12,10 @@ import RoundButton from './components/RoundButton';
 
 
 export default class Login extends Component {
+  onPressLogin() {
+    Actions.main();  // 현재 페이지가 스택에 남으면서 다음 페이지는 스택에 쌓인다.
+  }
+
   render() {
     return (
       <View style={styles.wrapper}>
@@ -22,7 +26,7 @@ export default class Login extends Component {
             <LableTextInput label="PASSWORD" inputText="패스워드 입력" hiding={true} />
           </View>
           <View style={styles.button_wrapper}>
-            <RoundButton name="LOGIN" />
+            <RoundButton name="LOGIN" onPress={this.onPressLogin} />
             <RoundButton name="SIGN UP" />
           </View>
         </View>
@@ -46,11 +50,11 @@ const styles = StyleSheet.create({
     height: 360,
     width: 320,
     backgroundColor: 'white',
-    padding: 10,
+    padding: 10
   },
   title: {
     fontSize: 23,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   text_wrapper: {
     height: 160,
