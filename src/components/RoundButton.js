@@ -8,9 +8,13 @@ import {
 
 
 export default class RoundButton extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
-      <TouchableOpacity style={styles.button_style}>
+      <TouchableOpacity style={styles.button_style} onPress={this.props.onPress}>
         <Text style={styles.text_style}>{this.props.name}</Text>
       </TouchableOpacity>
     );
