@@ -13,7 +13,8 @@ import RoundButton from './components/RoundButton';
 
 export default class Login extends Component {
   onPressLogin() {
-    Actions.main();  // 현재 페이지가 스택에 남으면서 다음 페이지는 스택에 쌓인다.
+    // Actions.main();  // 현재 페이지가 스택에 남으면서 다음 페이지는 스택에 쌓인다.
+    Actions.replace('main');  // 현재 페이지는 pop되고 다음 페이지가 새로 push된다.
   }
 
   render() {
